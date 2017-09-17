@@ -1,11 +1,12 @@
 <?php
 require_once 'settings.php';
 $describe .= $_GET['table'];
-$types = ['TINYINT', 'SMALLINT', 'MEDIUMINT', 'INT', 'BIGINT', 'UNSIGNED', 'FLOAT', 'DOUBLE', 'REAL', 'DECIMAL', 'NUMERIC', 'VARCHAR', 'TINYTEXT', 'TEXT', 'MEDIUMTEXT', 'LONGTEXT', 'TINYBLOB', 'BLOB', 'MEDIUMBLOB', 'LONGBLOB', 'DATE', 'TIME', 'DATETIME', 'TIMESTAMP'];
+$types = ['TINYINT', 'SMALLINT', 'MEDIUMINT', 'INT', 'BIGINT', 'UNSIGNED', 'FLOAT', 'DOUBLE', 'REAL', 'DECIMAL', 'NUMERIC', 'VARCHAR (100)', 'TINYTEXT', 'TEXT', 'MEDIUMTEXT', 'LONGTEXT', 'TINYBLOB', 'BLOB', 'MEDIUMBLOB', 'LONGBLOB', 'DATE', 'TIME', 'DATETIME', 'TIMESTAMP'];
 if (isset($_POST['change'])) {
-    $edit = 'ALTER TABLE ' . $_GET['table'] . ' CHANGE ' . $_GET['name'] . ' ' . $_POST['new_name'] . ' ' . $_POST['new_type'] . ' NOT NULL';
+    $edit = 'ALTER TABLE ' . $_GET['table'] . ' CHANGE ' . $_GET['name'] . ' ' . $_POST['new_name'] . ' ' . $_POST['new_type'] .'';
     $dbc->query($edit);
-   echo '<a href="index.php?table='.$_GET['table'].'">back</a>';
+   echo '<a href="index.php?table='.$_GET['table'].'"><h3>НАЗАД</h3></a>';
+  
 }
 ?>
 <html>
